@@ -1,0 +1,19 @@
+.image-item {
+  width: 12rem;
+  height: 14rem;
+  background: #fff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+  margin: 1rem;
+
+  &__inner {
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem auto 0;
+    background-size: cover!important;
+    background-position: center!important;
+  }
+
+  &__title {
+    text-align: center;
+  }
+}

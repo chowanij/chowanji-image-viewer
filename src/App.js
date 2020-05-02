@@ -1,24 +1,76 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Gallery from './components/Gallery'
+import './App.scss';
+
+
+const data = [
+  {
+      src: 'https://unsplash.it/800/300?image=1',
+      title: 'title',
+      content: 'content'
+  },
+  {
+      src: 'https://unsplash.it/800/1300?image=22',
+      title: 'title',
+      content: 'content'
+  },
+  {
+      src: 'https://unsplash.it/1800/1300?image=13',
+      title: 'title',
+      content: 'content'
+  },
+  {
+      src: 'https://unsplash.it/800/600?image=8',
+      title: 'title',
+      content: 'content'
+  },
+  {
+      src: 'https://unsplash.it/200/300?image=15',
+      title: 'title',
+      content: 'content'
+  },
+  {
+      src: 'https://unsplash.it/800/300?image=6',
+      title: 'title',
+      content: 'content'
+  },
+   {
+      src: 'https://unsplash.it/800/300?image=1',
+      title: 'title',
+      content: 'content'
+  },
+  {
+      src: 'https://unsplash.it/800/1300?image=22',
+      title: 'title',
+      content: 'content'
+  },
+  {
+      src: 'https://unsplash.it/1800/1300?image=13',
+      title: 'title',
+      content: 'content'
+  },
+  {
+      src: 'https://unsplash.it/800/600?image=8',
+      title: 'title',
+      content: 'content'
+  },
+  {
+      src: 'https://unsplash.it/200/300?image=15',
+      title: 'title',
+      content: 'content'
+  },
+  {
+      src: 'https://unsplash.it/800/300?image=6',
+      title: 'title',
+      content: 'content'
+  }
+  
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Gallery images={data} />
     </div>
   );
 }
