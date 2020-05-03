@@ -1,3 +1,15 @@
+### Tech stack
+- React and Redux
+- made with create-react-app
+- little bit of bulma
+- Sass modules
+
+### Asumptions 
+- Simple Redux setup
+- Only functional componets
+- React & Redux hooks used 
+- Eslint!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

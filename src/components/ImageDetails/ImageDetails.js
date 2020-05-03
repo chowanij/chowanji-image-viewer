@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
-import Modal from 'react-overlays/Modal';
-import Backdrop from './Backdrop';
-import TitleEdit from './TitleEdit';
-import DeleteImage from './DeleteImage';
-import './ImageDetails.scss';
+import Modal from "react-overlays/Modal";
+import Backdrop from "./Backdrop";
+import TitleEdit from "./TitleEdit";
+import DeleteImage from "./DeleteImage";
+import "./ImageDetails.scss";
 
 const ImageDetails = ({ isShow, imageId, onClose }) => {
-  const gallery = useSelector(state => state);
+  const gallery = useSelector((state) => state);
   const image = gallery[imageId];
 
   return (
@@ -21,10 +21,16 @@ const ImageDetails = ({ isShow, imageId, onClose }) => {
     >
       <div className="image-details__body box">
         <div className="image-details__header">
-          <button className="button image-details__close-button" onClick={onClose}>close</button>
-          { image && <h3 class="subtitle is-3">{image.title}</h3> }
+          <button
+            type="button"
+            className="button image-details__close-button"
+            onClick={onClose}
+          >
+            close
+          </button>
+          {image && <h3 className="subtitle is-3">{image.title}</h3>}
         </div>
-        { image && 
+        {image && (
           <div className="image-details__image-wrapper">
             <div>
               <p className="subtitle">Details:</p>
@@ -38,14 +44,12 @@ const ImageDetails = ({ isShow, imageId, onClose }) => {
               src={image.src}
               alt={image.title}
             />
-            
           </div>
-        }
+        )}
       </div>
     </Modal>
   );
-
-}
+};
 
 ImageDetails.propTypes = {
   onClose: PropTypes.func.isRequired,

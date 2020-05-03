@@ -1,42 +1,43 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import './TitleEdit.scss';
+import "./TitleEdit.scss";
 
 const TitleEdit = ({ title, imageId }) => {
-  const [imgTitle, setImgTitle] = useState(title)
-  const [isEdit, setIsEdit] = useState(false)
+  const [imgTitle, setImgTitle] = useState(title);
+  const [isEdit, setIsEdit] = useState(false);
   const dispatch = useDispatch();
 
   const onChange = (event) => {
     setImgTitle(event.target.value);
-  }
+  };
 
   const onSave = () => {
-    setIsEdit(!isEdit)
+    setIsEdit(!isEdit);
     dispatch({
-      type: 'CHANGE_TITLE',
+      type: "CHANGE_TITLE",
       idToChange: imageId,
-      title: imgTitle
+      title: imgTitle,
     });
-  }
+  };
 
   const toggleEdit = () => {
-    setIsEdit(!isEdit)
-  }
+    setIsEdit(!isEdit);
+  };
 
-  if(!isEdit) {
+  if (!isEdit) {
     return (
       <div className="title-edit">
         <p className="subtitle is-6">title: {title}</p>
         <button
+          type="button"
           className="button is-info is-small"
           onClick={toggleEdit}
-        > 
-        rename 
+        >
+          rename
         </button>
       </div>
-    )
+    );
   }
 
   return (
@@ -48,6 +49,7 @@ const TitleEdit = ({ title, imageId }) => {
         className="input is-info is-small"
       />
       <button
+        type="button"
         className="button is-info is-small"
         onClick={onSave}
       >
@@ -55,7 +57,6 @@ const TitleEdit = ({ title, imageId }) => {
       </button>
     </div>
   );
-
 };
 
 TitleEdit.propTypes = {
