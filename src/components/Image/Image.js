@@ -7,16 +7,16 @@ const {src, title, content} = image;
 const imageStyle = {
   background: `url(${src})`
 }
-
-console.log('image: ', image);
   return (
-    <div className="image-item">
-      <div
-        className="image-item__inner"
-        style={imageStyle}
-        onClick={() => onClick(itemId)}
-      />
-      <h4 className="image-item__title">{title}</h4>
+    <div className="tile is-parent is-3">
+      <article className="tile is-child box">
+        <p className="sub-title">{title}</p>
+        <div
+          className="image-item__inner"
+          style={imageStyle}
+          onClick={() => onClick(itemId)}
+        />
+      </article>
     </div>
   )  
 }

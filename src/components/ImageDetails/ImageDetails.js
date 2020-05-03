@@ -29,6 +29,9 @@ const ImageDetails = ({ isShow, imageId, onClose }) => {
       aria-labelledby="picture details"
     >
       <div className="image-details__body">
+        <div className="image-details__header">
+        <button className="button image-details__close-button" onClick={onClose}>close</button>
+        </div>
         { image && 
           <div className="image-details__image-wrapper">
             <img
@@ -37,8 +40,7 @@ const ImageDetails = ({ isShow, imageId, onClose }) => {
               alt={image.title}
             />
             <h4>{image.title}</h4>
-            <button onClick={onClose}>close</button>
-            <button onClick={onDelete}>delete</button>
+            <button className="button is-danger" onClick={onDelete}>delete</button>
             <TitleEdit imageId={imageId} title={image.title} />
           </div>
         }

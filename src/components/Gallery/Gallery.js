@@ -15,12 +15,9 @@ const Gallery  = ({ images }) => {
     setImageId(imgId)
   };
 
-  console.log('image id: ', imageId)
-  console.log('show: ', show)
-
   return (
     <>
-      <div className="gallery">
+      <div className="tile is-ancestor gallery">
         {images.map( (item, index) => <Image itemId={index} image={item} onClick={showDetails} />)}
       </div>
       <ImageDetails

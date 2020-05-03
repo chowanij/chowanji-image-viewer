@@ -92,7 +92,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="container">
       {gallery && <Gallery images={gallery} />}
     </div>
   );

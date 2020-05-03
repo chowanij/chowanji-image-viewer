@@ -1,9 +1,4 @@
 .image-item {
-  width: 12rem;
-  height: 14rem;
-  background: #fff;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
-  margin: 1rem;
 
   &__inner {
     width: 10rem;
@@ -12,9 +7,5 @@
     background-size: cover!important;
     background-position: center!important;
     cursor: pointer;
-  }
-
-  &__title {
-    text-align: center;
   }
 }
