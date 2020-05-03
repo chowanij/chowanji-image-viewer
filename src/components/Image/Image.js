@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Image.scss';
 
-const Image = ({ image, onClick }) => {
+const Image = ({image, itemId, onClick }) => {
 const {src, title, content} = image;
 const imageStyle = {
   background: `url(${src})`
@@ -14,7 +14,7 @@ console.log('image: ', image);
       <div
         className="image-item__inner"
         style={imageStyle}
-        onClick={() => onClick({...image})}
+        onClick={() => onClick(itemId)}
       />
       <h4 className="image-item__title">{title}</h4>
     </div>

@@ -7,26 +7,25 @@ import './Gallery.scss';
 
 const Gallery  = ({ images }) => {
   const [show, setShow] = useState(false);
-  const [imageDetails, setImageDetails] = useState({})
+  const [imageId, setImageId] = useState(-1)
 
   const closeDetails = () => setShow(false);
-  const showDetails = (imgDetails) => {
+  const showDetails = (imgId) => {
     setShow(true)
-    setImageDetails(imgDetails)
+    setImageId(imgId)
   };
 
-  console.log('image details: ', imageDetails)
+  console.log('image id: ', imageId)
   console.log('show: ', show)
 
   return (
     <>
       <div className="gallery">
-        {images.map( item => <Image image={item} onClick={showDetails} />)}
+        {images.map( (item, index) => <Image itemId={index} image={item} onClick={showDetails} />)}
       </div>
       <ImageDetails
         isShow={show}
-        item={imageDetails}
-        imageDetails={imageDetails}
+        imageId={imageId}
         onClose={closeDetails}
       />
     </>
