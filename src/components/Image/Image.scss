@@ -1,4 +1,10 @@
+$break-small: 768px;
+
 .image-item {
+  @media screen and (max-width: $break-small) {
+    margin: 2rem auto; 
+    max-width: 16rem;
+  }
 
   &__inner {
     width: 10rem;

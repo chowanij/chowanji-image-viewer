@@ -8,7 +8,7 @@ const imageStyle = {
   background: `url(${src})`
 }
   return (
-    <div className="tile is-parent is-3">
+    <div className="tile is-parent is-3 image-item">
       <article className="tile is-child box">
         <p className="sub-title">{title}</p>
         <div

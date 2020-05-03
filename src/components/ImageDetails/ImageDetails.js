@@ -1,24 +1,15 @@
 import React, { useState, useEffect }from 'react';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import Modal from 'react-overlays/Modal';
 import Backdrop from './Backdrop';
-import TitleEdit from './TitleEdit'
+import TitleEdit from './TitleEdit';
+import DeleteImage from './DeleteImage';
 import './ImageDetails.scss';
 
 const ImageDetails = ({ isShow, imageId, onClose }) => {
   const gallery = useSelector(state => state);
-  const dispatch = useDispatch();
   const image = gallery[imageId];
-  
-  const onDelete = () => {
-    onClose();
-    dispatch({
-      type: 'REMOVE_ITEM',
-      idToRemove: imageId
-    });
-  };
-
 
   return (
     <Modal
@@ -40,7 +31,7 @@ const ImageDetails = ({ isShow, imageId, onClose }) => {
               <TitleEdit imageId={imageId} title={image.title} />
               <p className="subtitle is-6">content: {image.content}</p>
               <p className="subtitle is-6">author: {image.author}</p>
-              <button className="button is-danger" onClick={onDelete}>delete</button>
+              <DeleteImage imageId={imageId} onClose={onClose} />
             </div>
             <img
               className="image-details__image"
