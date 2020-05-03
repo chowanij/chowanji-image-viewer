@@ -15,12 +15,17 @@ const ImageDetails = ({ isShow, item, itemId, onClose }) => {
       aria-labelledby="picture details"
     >
       <div className="image-details__body">
-        DUPA DUPA
+        <div className="image-details__image-wrapper">
         <img
           className="image-details__image"
           src={item.src}
           alt={item.title}
         />
+        <h4>{item.title}</h4>
+
+
+
+        </div>
       </div>
     </Modal>
   );
