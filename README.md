@@ -4,7 +4,7 @@
 - little bit of bulma
 - Sass modules
 
-### Asumptions 
+### Assumptions 
 - Simple Redux setup
 - Only functional componets
 - React & Redux hooks used 
