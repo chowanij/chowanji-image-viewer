@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
+import PropTypes from 'prop-types';
 import './DeleteImage.scss';
 
 const DeleteImage = ({ imageId, onClose }) => {
@@ -48,5 +49,10 @@ const DeleteImage = ({ imageId, onClose }) => {
   );
 
 }
+
+DeleteImage.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  imageId: PropTypes.number,
+};
 
 export default DeleteImage;

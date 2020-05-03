@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Image.scss';
 
 const Image = ({image, itemId, onClick }) => {
-const {src, title, content} = image;
+const {src, title, } = image;
 const imageStyle = {
   background: `url(${src})`
 }
@@ -21,4 +21,14 @@ const imageStyle = {
   )  
 }
 
+Image.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  image: PropTypes.shape({
+          src: PropTypes.string,  
+          title: PropTypes.string,
+          content: PropTypes.string,
+          author: PropTypes.string,
+        }),
+  itemId: PropTypes.number
+};
 export default Image;

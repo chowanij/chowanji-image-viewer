@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from "react-redux";
 import './TitleEdit.scss';
 
 const TitleEdit = ({ title, imageId }) => {
@@ -55,6 +56,11 @@ const TitleEdit = ({ title, imageId }) => {
     </div>
   );
 
-}
+};
+
+TitleEdit.propTypes = {
+  title: PropTypes.string,
+  imageId: PropTypes.number,
+};
 
 export default TitleEdit;

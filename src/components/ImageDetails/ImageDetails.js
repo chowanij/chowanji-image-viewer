@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from "react-redux";
 import Modal from 'react-overlays/Modal';
@@ -46,5 +46,11 @@ const ImageDetails = ({ isShow, imageId, onClose }) => {
   );
 
 }
+
+ImageDetails.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  isShow: PropTypes.bool,
+  imageId: PropTypes.number,
+};
 
 export default ImageDetails;

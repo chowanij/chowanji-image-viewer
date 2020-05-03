@@ -18,7 +18,14 @@ const Gallery  = ({ images }) => {
   return (
     <>
       <div className="tile is-ancestor gallery">
-        {images.map( (item, index) => <Image itemId={index} image={item} onClick={showDetails} />)}
+        {images.map( (item, index) => 
+          <Image
+            key={`${item.title}_${item.author}`}
+            itemId={index}
+            image={item}
+            onClick={showDetails}
+          />)
+        }
       </div>
       <ImageDetails
         isShow={show}
@@ -27,6 +34,15 @@ const Gallery  = ({ images }) => {
       />
     </>
   )
+};
+
+Gallery.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.shape({
+    src: PropTypes.string,  
+    title: PropTypes.string,
+    content: PropTypes.string,
+    author: PropTypes.string,
+  })),
 };
 
 export default Gallery;
