@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 import Gallery from './components/Gallery'
 import './App.scss';
 
@@ -80,9 +81,19 @@ const data = [
 ];
 
 function App() {
+  const gallery = useSelector(state => state);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+      type: "LOAD_GALLERY",
+      payload: data
+    })
+  }, []);
+
   return (
     <div className="App">
-      <Gallery images={data} />
+      {gallery && <Gallery images={gallery} />}
     </div>
   );
 }
